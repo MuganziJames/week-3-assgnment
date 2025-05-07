@@ -1,22 +1,21 @@
-my_list = []                      # create empty list
-my_list.append(10)
-my_list.append(20)
-my_list.append(30)
-my_list.append(40)
-my_list.insert(1, 15)             # insert 15 at second position
-my_list.extend([50, 60, 70])      # extend with another list
-my_list.pop()                     # remove the last element
-my_list.sort()                    # sort in ascending order
-index_of_30 = my_list.index(30)   # find index of 30
-print("Index of 30:", index_of_30)
-my_list = []                      # create empty list
-my_list.append(10)
-my_list.append(20)
-my_list.append(30)
-my_list.append(40)
-my_list.insert(1, 15)             # insert 15 at second position
-my_list.extend([50, 60, 70])      # extend with another list
-my_list.pop()                     # remove the last element
-my_list.sort()                    # sort in ascending order
-index_of_30 = my_list.index(30)   # find index of 30
-print("Index of 30:", index_of_30)
+def calculate_discount(price, discount_percent):
+    if discount_percent >= 20:
+        discount_amount = (discount_percent / 100) * price
+        return price - discount_amount
+    else:
+        return price
+
+# Prompt user for inputs
+try:
+    original_price = float(input("Enter the original price of the item: "))
+    discount = float(input("Enter the discount percentage: "))
+
+    final_price = calculate_discount(original_price, discount)
+
+    if discount >= 20:
+        print(f"Discount applied! The final price is: ${final_price:.2f}")
+    else:
+        print(f"No discount applied. The price remains: ${final_price:.2f}")
+
+except ValueError:
+    print("Please enter valid numbers for price and discount.")
